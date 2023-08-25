@@ -1,0 +1,5 @@
+- THE MOMENTO PATTERN
+
+
+- Used to implement undo operations
+- We have a text editor, with the attribute content (String)

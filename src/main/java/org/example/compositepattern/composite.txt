@@ -1,0 +1,13 @@
+- We want to represent a hierarchy of objects
+
+- For example, we have multiple shapes, and we want to group them inside one group
+
+- A priori, We can declare two classes : Shape and Group, group has a list of objects (can be shape or other groups)
+
+- The first problem we encounter is that we want to treat objects like we do with groups : we want to gather multiple
+groups in a group, if we used Object class, we have to use if else for each method
+
+
+We basically want to create a common treatment for different objects => POLYMORPHISM
+
+- The common behavior (In our case is the method render()) will be stored in an interface called Component

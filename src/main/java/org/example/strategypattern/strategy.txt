@@ -1,0 +1,29 @@
+- We want to store the images that our users upload
+- Before we store them, we need to apply a filter and compress
+
+-------------------------------------------------------------
+    public void store() {
+        if (compressor == "PNG"){
+            System.out.println("Storing in PNG...");
+        }
+        if (compressor == "JPG"){
+            System.out.println("Storing in JPG...");
+        }
+        if (filter == "BW"){
+            System.out.println("Black and white...");
+        }
+        if (filter == "filter1"){
+            System.out.println("filter1...");
+        }
+    }
+-------------------------------------------------------------
+
+- This violates the single responsibility principle, the ImageStorage class is supposed to store the image not apply
+filters and compression algorithms, also the decision making if makes it harder to support new feature
+
+- The compressor and the filter behavior varies => polymorphism
+
+- For compressing, we will use a Compressor interface that has the method compress, classes such as PngCompressor implement
+this method (Same for filter)
+
+- If we need new filters, we will just create another filter class that implements Filter
